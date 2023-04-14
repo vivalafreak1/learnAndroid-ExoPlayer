@@ -10,6 +10,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         const val URL_VIDEO_DICODING = "https://github.com/dicodingacademy/assets/releases/download/release-video/VideoDicoding.mp4"
+        const val URL_AUDIO = "https://github.com/dicodingacademy/assets/raw/main/android_intermediate_academy/bensound_ukulele.mp3"
     }
 
     private val viewBinding by lazy(LazyThreadSafetyMode.NONE) {
@@ -24,7 +25,9 @@ class MainActivity : AppCompatActivity() {
         viewBinding.videoView.player = player
 
         val mediaItem = MediaItem.fromUri(URL_VIDEO_DICODING)
+        val anotherMediaItem = MediaItem.fromUri(URL_AUDIO)
         player.setMediaItem(mediaItem)
+        player.addMediaItem(anotherMediaItem)
         player.prepare()
     }
 }
